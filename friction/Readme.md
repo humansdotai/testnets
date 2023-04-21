@@ -18,7 +18,7 @@ A `gentx` does three things:
 Software:
 
 * Go version: [v1.20.1+](https://golang.org/dl/)
-* Humans version: [v0.1.x](https://github.com/humansdotai/humans/releases)
+* Humans version: [v0.1.0](https://github.com/humansdotai/humans/releases)
 
 To verify that Go is installed:
 
@@ -27,7 +27,7 @@ go version
 # Should return go version go1.20.1 linux/amd64
 ```
 
-## Instructions (Until April 25, 2023 12AM PST)
+## Instructions (Until April 26, 2023 12PM GMT)
 
 These instructions are written targeting an Ubuntu 20.04 system.  Relevant changes to commands should be made depending on the OS/architecture you are running on.
 
@@ -106,6 +106,6 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
     humansd validate-genesis
     ```
 
-8 . Create Pull Request to the repository ([humansdotai/testnets](https://github.com/humansdotai/testnets)) with the file  `friction/gentxs/<your validator moniker>.json`. In order to be a valid submission, you need the .json file extension and no whitespace or special characters in your filename.
+8 . Create Pull Request to the repository ([humansdotai/testnets](https://github.com/humansdotai/testnets)) with the file  `friction/gentxs/<your validator moniker>.json`. In order to be a valid submission, you need the `.json` file extension and no whitespace or special characters in your filename.
 
 Your PR should be one addition. Only PR requests from approved active participants will be included in the genesis file.

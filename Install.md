@@ -100,7 +100,7 @@ humansd query tendermint-validator-set | grep "$(humansd tendermint show-address
 
 You should now see your validator in one of Evmos explorers. You are looking for the `bech32` encoded `address` in the `~/.humansd/config/priv_validator.json` file.
 
-:::warning Note
+**Note**
 To be in the validator set, you need to have more total voting power than the 100th validator.
 :::
 

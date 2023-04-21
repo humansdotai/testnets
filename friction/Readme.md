@@ -80,7 +80,7 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 
 5. Create the gentx
 
-   ⚠️ Please set the `commission-rate` ≥ `0.05` as the genesis parameter for staking `min_commission_rate` is set to `0.05` and the genesis block will not be generated
+   ⚠️ Please set the `commission-rate` ≥ `0.05` as the genesis parameter for staking `min_commission_rate` is set to `0.05` and the genesis block will not be generated.
 
    ```bash
    humansd gentx <your key name> 1000000000000000000aheart \

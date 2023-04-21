@@ -4,6 +4,7 @@
 
 * [Overview](../Readme.md)
 * [Installation Instructions](../Install.md)
+* [Node repository](https://github.com/humansdotai/humans/)
 
 Thank you for becoming a genesis validator on Humans! This guide will provide instructions on setting up a node, submitting a gentx, and other tasks needed to participate in the launch of the Humans Friction incentivized testnet.
 

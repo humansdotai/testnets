@@ -16,8 +16,8 @@
           "max_change_rate": "0.010000000000000000"
         },
         "min_self_delegation": "1",
-        "delegator_address": "human1davz40kat93t49ljrkmkl5uqhqq45e0t2ghhx0",
-        "validator_address": "humanvaloper1davz40kat93t49ljrkmkl5uqhqq45e0txmdcd2",
+        "delegator_address": "human1f6xlyv09n0uq3gzqn6pzjv3sg3cujcwyrwj490",
+        "validator_address": "humanvaloper1f6xlyv09n0uq3gzqn6pzjv3sg3cujcwy0ag6w2",
         "pubkey": {
           "@type": "/cosmos.crypto.ed25519.PubKey",
           "key": "wb8cSfH2uSJN9gxJMd9A/PBaseY/3ofMWAe7sCO8tjY="
@@ -41,8 +41,8 @@
     "signer_infos": [
       {
         "public_key": {
-          "@type": "/cosmos.crypto.secp256k1.PubKey",
-          "key": "As1SQq2spG6XoreXb1Bgvya8jdCvVjT+kobMKyhPf2oB"
+          "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+          "key": "AhGbYrL33+Vrd5989GsZo0E47Fj8P6gNKrxh7fy3Ii+H"
         },
         "mode_info": {
           "single": {
@@ -63,6 +63,6 @@
     "tip": null
   },
   "signatures": [
-    "6woWX7XHOqCB9BFHXgIFRsOtAnYeaL2PHQymfePWUj5YYcqKgNqYCm4DesowraQvEaA8i+cJaYpnBGSKSu6EHA=="
+    "Vqr/jkd27dquF5XkUMjmug/ZlLwIP5X30BS8HiFTzj4jt1A3FHfOjv1neHFKTq5Kq8Q5KAcwv2jQ6z5FbPrSswA="
   ]
 }

@@ -1,0 +1,63 @@
+{
+  "body": {
+    "messages": [
+      {
+        "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+        "description": {
+          "moniker": "POSTHUMAN∞DVS",
+          "identity": "8A9FC930E1A980D6",
+          "website": "https://posthuman.digital",
+          "security_contact": "validator@posthuman.digital",
+          "details": "100% refund in case of slashing ⚛️ ME∞WE 🤲 Part of the profits goes to charity"
+        },
+        "commission": {
+          "rate": "0.050000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "min_self_delegation": "1",
+        "delegator_address": "human158ugjmftdl0gncny5ql3kv5qtc9kffkkke7a7w",
+        "validator_address": "humanvaloper158ugjmftdl0gncny5ql3kv5qtc9kffkk62yj4t",
+        "pubkey": {
+          "@type": "/cosmos.crypto.ed25519.PubKey",
+          "key": "DOmd0+8Ge819/GmYl5kUK9+hWkJjpcwqtaiblsGeVD8="
+        },
+        "value": {
+          "denom": "aheart",
+          "amount": "1000000000000000000"
+        }
+      }
+    ],
+    "memo": "21a68893a25bf0693fb1c9e81ad3184159a9e128@141.95.34.193:26656",
+    "timeout_height": "0",
+    "extension_options": [],
+    "non_critical_extension_options": []
+  },
+  "auth_info": {
+    "signer_infos": [
+      {
+        "public_key": {
+          "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+          "key": "A9gVvutsHyU0oBgwN8g34/nANghOwjtbA9Ylxom0Cp+0"
+        },
+        "mode_info": {
+          "single": {
+            "mode": "SIGN_MODE_DIRECT"
+          }
+        },
+        "sequence": "0"
+      }
+    ],
+    "fee": {
+      "amount": [],
+      "gas_limit": "200000",
+      "payer": "",
+      "granter": ""
+    },
+    "tip": null
+  },
+  "signatures": [
+    "IZ+8oTEJ2dIrosejl5jv16fBrVvUj8T9kvPWOi7eFZMrlyywhG0QtpGXwYxHEzw0iPXiVjGsnf68UgchE1elDgE="
+  ]
+}
+

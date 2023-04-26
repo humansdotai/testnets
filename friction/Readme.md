@@ -110,3 +110,8 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 8 . Create Pull Request to the repository ([humansdotai/testnets](https://github.com/humansdotai/testnets)) with the file  `friction/gentxs/<your validator moniker>.json`. In order to be a valid submission, you need the `.json` file extension and no whitespace or special characters in your filename.
 
 Your PR should be one addition. Only PR requests from approved active participants will be included in the genesis file.
+
+## Seed and Peers
+
+We are expecting that the peers in the genesis files are reacheable, so we can avoid desync issues, or unreacheable genesis peers in the future, if you are behind a NAT or a private infrastructure please use the `--ip` flag when generating the gentx file. 
+

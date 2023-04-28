@@ -280,5 +280,5 @@ That's it! You have successfully exposed the API and RPC ports and configured CO
 We recommend starting the node with the following parameters
 
 ```bash
-humansd start --home <your_data_dir> --chain-id <your_chain_id> --metrics --pruning=nothing --evm.tracer=json --minimum-gas-prices= --1800000000aheart json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable
+humansd start --home <your_data_dir> --chain-id <your_chain_id> --metrics --pruning=nothing --evm.tracer=json --minimum-gas-prices=1800000000aheart json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable
 ```

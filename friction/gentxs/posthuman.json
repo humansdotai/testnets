@@ -20,7 +20,7 @@
         "validator_address": "humanvaloper158ugjmftdl0gncny5ql3kv5qtc9kffkk62yj4t",
         "pubkey": {
           "@type": "/cosmos.crypto.ed25519.PubKey",
-          "key": "DOmd0+8Ge819/GmYl5kUK9+hWkJjpcwqtaiblsGeVD8="
+          "key": "KBMZq0g64ogCt55X7OFv3+Q6s/ZlKIcqRp+m60+vebo="
         },
         "value": {
           "denom": "aheart",
@@ -28,7 +28,7 @@
         }
       }
     ],
-    "memo": "21a68893a25bf0693fb1c9e81ad3184159a9e128@141.95.34.193:26656",
+    "memo": "a360a52791bd9aae0120bf42b617f5eabfd8b6c9@141.95.34.193:26656",
     "timeout_height": "0",
     "extension_options": [],
     "non_critical_extension_options": []
@@ -57,7 +57,7 @@
     "tip": null
   },
   "signatures": [
-    "IZ+8oTEJ2dIrosejl5jv16fBrVvUj8T9kvPWOi7eFZMrlyywhG0QtpGXwYxHEzw0iPXiVjGsnf68UgchE1elDgE="
+    "tRVrIwtsjGvPNxtYxWBf/6zvVboSwq1XN61tK9u0VphLF4uF6jAdemdi8UlHcrsEpNtIkx1Rv+uMA9Z0XH2zSQE="
   ]
 }
 

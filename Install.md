@@ -219,57 +219,212 @@ timeout_prevote = "10s"
 timeout_prevote_delta = "5s"
 ```
 
-## Enabling the RPC and the API port
+## Exposing ports
 
-This will allow you to expose the API and RPC ports, and configure CORS (Cross-Origin Resource Sharing) to manage the security of your network. Here's a step-by-step tutorial on how to expose the API and RPC ports and configure CORS on Humans blockchain by editing the configuration files:
+This will allow you to expose different API and RPC ports, and configure CORS (Cross-Origin Resource Sharing) to manage the security of your network. Here's a step-by-step tutorial on how to expose the different API and RPC ports and configure CORS on Humans blockchain by editing the configuration files:
 
-### Find the Configuration File
+### Expose the Node API
 
-The first step is to locate the configuration file of your Humans blockchain. This file is usually named `config.toml` and is located in the root directory of your blockchain application. If you can't find the file, you can create a new one.
-
-### Expose the API and RPC Ports
-
-Once you have found the configuration file, open it in a text editor. The next step is to expose the API and RPC ports. To do this, add the following lines of code to the configuration file:
+ To do this, edit the following lines of the `app.toml` configuration file:
 
 ```bash
-# Expose the API port
-api_laddr = "tcp://0.0.0.0:<port_number>"
+###############################################################################
+###                           API Configuration                             ###
+###############################################################################
+
+[api]
+
+# Enable defines if the API server should be enabled.
+enable = true
+
+# Swagger defines if swagger documentation should automatically be registered.
+swagger = true
+
+# Address defines the API server to listen on.
+address = "tcp://0.0.0.0:1317"
+
+# MaxOpenConnections defines the number of maximum open connections.
+max-open-connections = 100
+
+# RPCReadTimeout defines the Tendermint RPC read timeout (in seconds).
+rpc-read-timeout = 5
+
+# RPCWriteTimeout defines the Tendermint RPC write timeout (in seconds).
+rpc-write-timeout = 3
+
+# RPCMaxBodyBytes defines the Tendermint maximum response body (in bytes).
+rpc-max-body-bytes = 1000000
+
+# EnableUnsafeCORS defines if CORS should be enabled (unsafe - use it at your own risk).
+enabled-unsafe-cors = false
 ```
+
+### Expose the Node RPC
+
+ To do this, edit the following lines of the `config.toml` configuration file:
 
 ```bash
-# Expose the RPC port
-rpc_laddr = "tcp://0.0.0.0:<port_number>"
+#######################################################
+###       RPC Server Configuration Options          ###
+#######################################################
+[rpc]
+
+# TCP or UNIX socket address for the RPC server to listen on
+laddr = "tcp://0.0.0.0:26657"
+
+# A list of origins a cross-domain request can be executed from
+# Default value '[]' disables cors support
+# Use '["*"]' to allow any origin
+cors_allowed_origins = ["*.humans.ai","*.humans.zone"]
+
+# A list of methods the client is allowed to use with cross-domain requests
+cors_allowed_methods = ["HEAD", "GET", "POST", ]
+
+# A list of non simple headers the client is allowed to use with cross-domain requests
+cors_allowed_headers = ["Origin", "Accept", "Content-Type", "X-Requested-With", "X-Server-Time", ]
+
 ```
 
-Replace "<port_number>" with the desired port numbers for the API and RPC ports. For example, if you want to expose the API port on port `8080` and the RPC port on port `8081`, the code would look like this:
+### Expose the Node P2P Port
+
+To do this, edit the following lines of the `config.toml` configuration file:
 
 ```bash
-# Expose the API port
-api_laddr = "tcp://0.0.0.0:8080"
+#######################################################
+###       RPC Server Configuration Options          ###
+#######################################################
+[rpc]
+
+# TCP or UNIX socket address for the RPC server to listen on
+laddr = "tcp://0.0.0.0:26657"
+
+# A list of origins a cross-domain request can be executed from
+# Default value '[]' disables cors support
+# Use '["*"]' to allow any origin
+cors_allowed_origins = ["*.humans.ai","*.humans.zone"]
+
+# A list of methods the client is allowed to use with cross-domain requests
+cors_allowed_methods = ["HEAD", "GET", "POST", ]
+
+# A list of non simple headers the client is allowed to use with cross-domain requests
+cors_allowed_headers = ["Origin", "Accept", "Content-Type", "X-Requested-With", "X-Server-Time", ]
 ```
+
+### Expose the Node EVM RPC, WS, Metrics
+
+To do this, edit the following lines of the `app.toml` configuration file:
 
 ```bash
-# Expose the RPC port
-rpc_laddr = "tcp://0.0.0.0:8081"
+###############################################################################
+###                           JSON RPC Configuration                        ###
+###############################################################################
+
+[json-rpc]
+
+# Enable defines if the gRPC server should be enabled.
+enable = true
+
+# Address defines the EVM RPC HTTP server address to bind to.
+address = "0.0.0.0:8545"
+
+# Address defines the EVM WebSocket server address to bind to.
+ws-address = "0.0.0.0:8546"
+
+# API defines a list of JSON-RPC namespaces that should be enabled
+# Example: "eth,txpool,personal,net,debug,web3"
+api = "eth,net,web3"
+
+# GasCap sets a cap on gas that can be used in eth_call/estimateGas (0=infinite). Default: 25,000,000.
+gas-cap = 25000000
+
+# EVMTimeout is the global timeout for eth_call. Default: 5s.
+evm-timeout = "5s"
+
+# TxFeeCap is the global tx-fee cap for send transaction. Default: 1eth.
+txfee-cap = 1
+
+# FilterCap sets the global cap for total number of filters that can be created
+filter-cap = 200
+
+# FeeHistoryCap sets the global cap for total number of blocks that can be fetched
+feehistory-cap = 100
+
+# LogsCap defines the max number of results can be returned from single 'eth_getLogs' query.
+logs-cap = 10000
+
+# BlockRangeCap defines the max block range allowed for 'eth_getLogs' query.
+block-range-cap = 10000
+
+# HTTPTimeout is the read/write timeout of http json-rpc server.
+http-timeout = "30s"
+
+# HTTPIdleTimeout is the idle timeout of http json-rpc server.
+http-idle-timeout = "2m0s"
+
+# AllowUnprotectedTxs restricts unprotected (non EIP155 signed) transactions to be submitted via
+# the node's RPC when the global parameter is disabled.
+allow-unprotected-txs = false
+
+# MaxOpenConnections sets the maximum number of simultaneous connections
+# for the server listener.
+max-open-connections = 0
+
+# EnableIndexer enables the custom transaction indexer for the EVM (ethereum transactions).
+enable-indexer = false
+
+# MetricsAddress defines the EVM Metrics server address to bind to. Pass --metrics in CLI to enable
+# Prometheus metrics path: /debug/metrics/prometheus
+metrics-address = "0.0.0.0:6065"
+
+# Upgrade height for fix of revert gas refund logic when transaction reverted.
+fix-revert-gas-refund-height = 0
 ```
 
-The next step is to configure CORS to manage the security of your network. To do this, add the following lines of code to the configuration file:
+### Expose Node metrics
+
+To do this, edit the following lines of the `config.toml` configuration file:
 
 ```bash
-# Configure CORS
-cors_allowed_origins = ["<domain_name>"]
-cors_allow_credentials = true
+#######################################################
+###       Instrumentation Configuration Options     ###
+#######################################################
+[instrumentation]
+
+# When true, Prometheus metrics are served under /metrics on
+# PrometheusListenAddr.
+# Check out the documentation for the list of available metrics.
+prometheus = true
+
+# Address to listen for Prometheus collector(s) connections
+prometheus_listen_addr = ":26660"
+
+# Maximum number of simultaneous connections.
+# If you want to accept a larger number than the default, make sure
+# you increase your OS limits.
+# 0 - unlimited.
+max_open_connections = 3
+
+# Instrumentation namespace
+namespace = "cometbft"
 ```
 
-Replace `<domain_name>` with the domain name that you want to allow access to your API and RPC ports. For example, if you want to allow access from `example.com`, the code would look like this:
+### Expose ABCI proxy
+
+To do this, edit the following lines of the `config.toml` configuration file:
 
 ```bash
-# Configure CORS
-cors_allowed_origins = ["example.com"]
-cors_allow_credentials = true
+#######################################################################
+###                   Main Base Config Options                      ###
+#######################################################################
+
+# TCP or UNIX socket address of the ABCI application,
+# or the name of an ABCI application compiled in with the CometBFT binary
+proxy_app = "tcp://127.0.0.1:26658"
+
+# A custom human readable name for this node
+moniker = "my_moniker"
 ```
 
-* Save the Configuration File:
 * Restart the Humans blockchain:
 The final step is to restart the Humans blockchain to apply the changes. You can do this by running the following command:
 
@@ -280,5 +435,5 @@ That's it! You have successfully exposed the API and RPC ports and configured CO
 We recommend starting the node with the following parameters
 
 ```bash
-humansd start --home <your_data_dir> --chain-id <your_chain_id> --metrics --pruning=nothing --evm.tracer=json --minimum-gas-prices=1800000000aheart json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable
+humansd start --home <your_data_dir> --chain-id <your_chain_id> --metrics --pruning=nothing --evm.tracer=json --minimum-gas-prices=1800000000aheart json-rpc.api eth,net,web3,miner --api.enable
 ```

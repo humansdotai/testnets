@@ -426,8 +426,7 @@ moniker = "my_moniker"
 ```
 
 * Restart the Humans blockchain:
-The final step is to restart the Humans blockchain to apply the changes. You can do this by running the following command:
-
+The final step is to restart the Humans blockchain to apply the changes.
 That's it! You have successfully exposed the API and RPC ports and configured CORS on your Humans blockchain. Now, you can access your API and RPC ports from the domain that you specified in the CORS configuration.
 
 # Starting the node

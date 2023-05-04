@@ -1,4 +1,4 @@
-# Mission 2
+# Mission 2 
 # Submitting your gentx for the Humans Incentivized Testnet
 
 ## Prerequisites
@@ -6,6 +6,8 @@
 * [Overview](../../Readme.md)
 * [Installation Instructions](../../Install.md)
 * [Node repository](https://github.com/humansdotai/humans/)
+
+⚠️ Check the `genesis.json` hash before continuing `cd3b0de0e5bf0b64fb336fa59415ac706b881343b6a9432b3b27c6d6ef582ffb  genesis.json`
 
 Thank you for becoming a genesis validator on Humans! This guide will provide instructions on setting up a node, submitting a gentx, and other tasks needed to participate in the launch of the Humans Friction incentivized testnet.
 

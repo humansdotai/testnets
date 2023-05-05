@@ -419,7 +419,7 @@ To do this, edit the following lines of the `config.toml` configuration file:
 
 # TCP or UNIX socket address of the ABCI application,
 # or the name of an ABCI application compiled in with the CometBFT binary
-proxy_app = "tcp://127.0.0.1:26658"
+proxy_app = "tcp://0.0.0.0:26658"
 
 # A custom human readable name for this node
 moniker = "my_moniker"

@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2023-05-8T09:00:00Z",
+  "genesis_time": "2023-05-08T09:00:00Z",
   "chain_id": "humans_3000-2",
   "initial_height": "1",
   "consensus_params": {

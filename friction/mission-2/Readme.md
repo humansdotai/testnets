@@ -8,7 +8,7 @@
 * [Installation Instructions](../../Install.md)
 * [Node repository](https://github.com/humansdotai/humans/)
 
-⚠️ Check the `genesis.json` hash before continuing `b818bd6c2097e661053e38fbffa4a1f60f346b02a2486220c4698ed2e8d9a037  genesis.json`
+⚠️ Check the `genesis.json` hash before continuing `930906160992f95109a37fcb537c30bd8470ef62790d3772bb4b828d204d27a1  genesis.json`
 
 Thank you for becoming a genesis validator on Humans! This guide will provide instructions on setting up a node, submitting a gentx, and other tasks needed to participate in the launch of the Humans Friction incentivized testnet.
 

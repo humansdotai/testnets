@@ -291,23 +291,12 @@ To do this, edit the following lines of the `config.toml` configuration file:
 
 ```bash
 #######################################################
-###       RPC Server Configuration Options          ###
+###           P2P Configuration Options             ###
 #######################################################
-[rpc]
+[p2p]
 
-# TCP or UNIX socket address for the RPC server to listen on
-laddr = "tcp://0.0.0.0:26657"
-
-# A list of origins a cross-domain request can be executed from
-# Default value '[]' disables cors support
-# Use '["*"]' to allow any origin
-cors_allowed_origins = ["*.humans.ai","*.humans.zone"]
-
-# A list of methods the client is allowed to use with cross-domain requests
-cors_allowed_methods = ["HEAD", "GET", "POST", ]
-
-# A list of non simple headers the client is allowed to use with cross-domain requests
-cors_allowed_headers = ["Origin", "Accept", "Content-Type", "X-Requested-With", "X-Server-Time", ]
+# Address to listen for incoming connections
+laddr = "tcp://0.0.0.0:26656"
 ```
 
 ### Expose the Node EVM RPC, WS, Metrics

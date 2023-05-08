@@ -63,7 +63,7 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 2. Initialize the `humansd` directories and create the local file with the correct chain-id
 
    ```bash
-   humansd init <moniker> --chain-id=humans_3000-2
+   humansd init <moniker> --chain-id=humans_3000-23
    ```
 
 3. Create a local key pair in the keybase
@@ -90,7 +90,7 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 
    ```bash
    humansd gentx <your key name> 1000000000000000000aheart \
-     --chain-id=humans_3000-2 \
+     --chain-id=humans_3000-23 \
      --moniker=<moniker> \
      --details="My moniker description" \
      --commission-rate=0.05 \

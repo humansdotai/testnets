@@ -94,6 +94,7 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
      --commission-rate=0.05 \
      --commission-max-rate=0.2 \
      --commission-max-change-rate=0.01 \
+     --gas-prices 4000000000000000aheart \
      --pubkey $(humansd tendermint show-validator) \
      --identity="<Keybase.io GPG Public Key>"
    ```

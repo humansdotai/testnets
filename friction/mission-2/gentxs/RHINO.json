@@ -22,7 +22,10 @@
           "@type": "/cosmos.crypto.ed25519.PubKey",
           "key": "0TYJHKOyA3kkV3u9I48p5WSnXlVZNYu802TO+IyzVjo="
         },
-        "value": { "denom": "aheart", "amount": "1000000000000000000" }
+        "value": {
+          "denom": "aheart",
+          "amount": "1000000000000000000"
+        }
       }
     ],
     "memo": "99594a0af2fda271d93efdc22dbf1590ef8ab1f7@38.146.3.209:26656",
@@ -37,11 +40,20 @@
           "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
           "key": "A64xPdcxXRT6LWgR+dlwOblBw+SePH0W1/RaELRDkssO"
         },
-        "mode_info": { "single": { "mode": "SIGN_MODE_DIRECT" } },
+        "mode_info": {
+          "single": {
+            "mode": "SIGN_MODE_DIRECT"
+          }
+        },
         "sequence": "0"
       }
     ],
-    "fee": { "amount": [], "gas_limit": "200000", "payer": "", "granter": "" },
+    "fee": {
+      "amount": [],
+      "gas_limit": "200000",
+      "payer": "",
+      "granter": ""
+    },
     "tip": null
   },
   "signatures": [

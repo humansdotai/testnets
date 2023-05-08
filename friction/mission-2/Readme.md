@@ -8,7 +8,7 @@
 * [Installation Instructions](../../Install.md)
 * [Node repository](https://github.com/humansdotai/humans/)
 
-⚠️ Check the `genesis.json` hash before continuing `930906160992f95109a37fcb537c30bd8470ef62790d3772bb4b828d204d27a1  genesis.json`
+⚠️ Check the `genesis.json` hash before continuing `be45acc413ef1ff73a19c796e74b84acdeb65b14d672684dc2374889c898cd3d  genesis.json`
 
 Thank you for becoming a genesis validator on Humans! This guide will provide instructions on setting up a node, submitting a gentx, and other tasks needed to participate in the launch of the Humans Friction incentivized testnet.
 
@@ -85,6 +85,8 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 5. Create the gentx
 
    ⚠️ Please set the `commission-rate` ≥ `0.05` as the genesis parameter for staking `min_commission_rate` is set to `0.05` and the genesis block will not be generated.
+
+     ⚠️ Please set the `gas-prices` ≥ `4000000000000000aheart` as the global parameter for  `gas-prices` is set to be bigger than `4000000000000000aheart` and the gentx creation will fail thus block will not co generated.
 
    ```bash
    humansd gentx <your key name> 1000000000000000000aheart \

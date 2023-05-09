@@ -1,6 +1,6 @@
 {
-  "genesis_time": "2023-05-08T09:00:00Z",
-  "chain_id": "humans_3000-2",
+  "genesis_time": "2023-05-11T09:00:00Z",
+  "chain_id": "humans_3000-23",
   "initial_height": "1",
   "consensus_params": {
     "block": {
@@ -380,14 +380,14 @@
     },
     "mint": {
       "minter": {
-        "inflation": "0.127962000000000000",
-        "annual_provisions": "748578199.000000000000000000"
+        "inflation": "0.000000000000000000",
+        "annual_provisions": "0.000000000000000000"
       },
       "params": {
         "mint_denom": "aheart",
-        "inflation_rate_change": "0.130000000000000000",
-        "inflation_max": "0.127962000000000000",
-        "inflation_min": "0.127962000000000000",
+        "inflation_rate_change": "0.000000000000000000",
+        "inflation_max": "0.000000000000000000",
+        "inflation_min": "0.000000000000000000",
         "goal_bonded": "0.670000000000000000",
         "blocks_per_year": "6311520"
       }
@@ -395,11 +395,11 @@
     "params": null,
     "slashing": {
       "params": {
-        "signed_blocks_window": "200",
-        "min_signed_per_window": "0.500000000000000000",
-        "downtime_jail_duration": "300s",
+        "signed_blocks_window": "300",
+        "min_signed_per_window": "0.50000000000000000",
+        "downtime_jail_duration": "600s",
         "slash_fraction_double_sign": "0.050000000000000000",
-        "slash_fraction_downtime": "0.010000000000000000"
+        "slash_fraction_downtime": "0.000000000000000000"
       },
       "signing_infos": [],
       "missed_blocks": []

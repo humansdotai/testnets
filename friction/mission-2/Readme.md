@@ -8,7 +8,7 @@
 * [Installation Instructions](../../Install.md)
 * [Node repository](https://github.com/humansdotai/humans/)
 
-⚠️ Check the `genesis.json` hash before continuing `930906160992f95109a37fcb537c30bd8470ef62790d3772bb4b828d204d27a1  genesis.json`
+⚠️ Check the `genesis.json` hash before continuing `be45acc413ef1ff73a19c796e74b84acdeb65b14d672684dc2374889c898cd3d  genesis.json`
 
 Thank you for becoming a genesis validator on Humans! This guide will provide instructions on setting up a node, submitting a gentx, and other tasks needed to participate in the launch of the Humans Friction incentivized testnet.
 
@@ -23,7 +23,7 @@ A `gentx` does three things:
 Software:
 
 * Go version: [v1.20.1+](https://golang.org/dl/)
-* Humans version: [v0.1.2](https://github.com/humansdotai/humans/releases)
+* Humans version: [v0.2.1](https://github.com/humansdotai/humans/releases)
 
 To verify that Go is installed:
 
@@ -40,31 +40,30 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 
    ```bash
    git clone https://github.com/humansdotai/humans
-   cd humans && git checkout tags/v0.1.2
+   cd humans && git checkout tags/v0.2.1
    make install
    ```
 
    If the `humansd` command is not available you can copy `cp ./build/humansd /usr/local/sbin/` you might need `sudo`
 
-   Make sure to checkout to `v0.1.2` tag.
+   Make sure to checkout to `v0.2.1` tag.
 
    Verify that everything is OK. If you get something *like* the following, you've successfully installed Humans on your system.
 
    ```sh
-   humansd version --long
    build_tags: netgo ledger,
-   commit: 663bc8c556d4a4084083ca5a6828b3a324a209b4
+   commit: d773227063e5d6187bfc312b2cf42fc18f4533e0
    cosmos_sdk_version: v0.46.11
    go: go version go1.20.3 linux/amd64
    name: humans
    server_name: humansd
-   version: 0.1.2
+   version: 0.2.1
    ```
 
 2. Initialize the `humansd` directories and create the local file with the correct chain-id
 
    ```bash
-   humansd init <moniker> --chain-id=humans_3000-2
+   humansd init <moniker> --chain-id=humans_3000-23
    ```
 
 3. Create a local key pair in the keybase
@@ -87,14 +86,17 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 
    ⚠️ Please set the `commission-rate` ≥ `0.05` as the genesis parameter for staking `min_commission_rate` is set to `0.05` and the genesis block will not be generated.
 
+     ⚠️ Please set the `gas-prices` ≥ `4000000000000000aheart` as the global parameter for  `gas-prices` is set to be bigger than `4000000000000000aheart` and the gentx creation will fail thus block will not co generated.
+
    ```bash
    humansd gentx <your key name> 1000000000000000000aheart \
-     --chain-id=humans_3000-2 \
+     --chain-id=humans_3000-23 \
      --moniker=<moniker> \
      --details="My moniker description" \
      --commission-rate=0.05 \
      --commission-max-rate=0.2 \
      --commission-max-change-rate=0.01 \
+     --gas-prices 4000000000000000aheart \
      --pubkey $(humansd tendermint show-validator) \
      --identity="<Keybase.io GPG Public Key>"
    ```

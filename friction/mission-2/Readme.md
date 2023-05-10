@@ -77,7 +77,7 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 4. Add the account to your local genesis file with a given amount and key you just created.
 
    ```bash
-   humansd add-genesis-account $(humansd keys show <your key name> -a) 1000000000000000000aheart
+   humansd add-genesis-account $(humansd keys show <your key name> -a) 801000000000000000000aheart
    ```
 
    Make sure to use `aheart` denom, not anything else like `uatom`.

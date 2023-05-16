@@ -49,3 +49,56 @@ May 16 11:55:50 humans cosmovisor[3287456]: 11:55AM INF service start book=/home
 May 16 11:55:50 humans cosmovisor[3287456]: 11:55AM INF service start impl=BlockchainReactor module=blockchain msg={} server=node
 May 16 11:55:50 humans cosmovisor[3287456]: 11:55AM INF Ensure peers module=pex numDialing=0 numInPeers=0 numOutPeers=0 numToDial=10 server=node
 May 16 11:55:50 humans cosmovisor[3287456]: 11:55AM INF service start impl=BlockPool module=blockchain msg={} server=node
+
+#Second restart
+
+user@humans:~$
+user@humans:~$
+user@humans:~$ sudo systemctl restart humansd && sudo journalctl -u humansd -f
+-- Logs begin at Tue 2023-05-16 05:25:33 CEST. --
+May 16 12:06:36 humans cosmovisor[3287456]: 12:06PM INF service stop impl={"Dir":"/home/user/.humansd/data/cs.wal","Head":{"ID":"a2RYInUcNXY2:/home/user/.humansd/data/cs.wal/wal","Path":"/home/user/.humansd/data/cs.wal/wal"},"ID":"group:a2RYInUcNXY2:/home/user/.humansd/data/cs.wal/wal","Logger":{}} module=consensus msg={} server=node wal=/home/user/.humansd/data/cs.wal/wal
+May 16 12:06:36 humans cosmovisor[3287456]: 12:06PM INF service stop impl={"Logger":{},"Switch":{"Logger":{}}} module=evidence msg={} server=node
+May 16 12:06:36 humans cosmovisor[3287456]: 12:06PM INF service stop impl={"Logger":{},"Switch":{"Logger":{}}} module=statesync msg={} server=node
+May 16 12:06:36 humans cosmovisor[3287456]: 12:06PM INF Closing rpc listener listener={"Listener":{}} server=node
+May 16 12:06:36 humans cosmovisor[3287456]: 12:06PM INF RPC HTTP server stopped err="accept tcp [::]:26657: use of closed network connection" module=rpc-server server=node
+May 16 12:06:36 humans cosmovisor[3287456]: 12:06PM ERR Error serving server err="accept tcp [::]:26657: use of closed network connection" server=node
+May 16 12:06:36 humans cosmovisor[3287456]: 12:06PM ERR Stopped accept routine, as transport is closed module=p2p numPeers=0 server=node
+May 16 12:06:36 humans systemd[1]: humansd.service: Succeeded.
+May 16 12:06:36 humans systemd[1]: Stopped humans-testnet node service.
+May 16 12:06:36 humans systemd[1]: Started humans-testnet node service.
+May 16 12:06:36 humans cosmovisor[3291463]: 12:06PM INF running app args=["start","--metrics","--pruning=nothing","--evm.tracer=json","--minimum-gas-prices=1800000000aheart","json-rpc.api","eth,net,web3,miner","--api.enable"] module=cosmovisor path=/home/user/.humansd/cosmovisor/genesis/bin/humansd
+May 16 12:06:37 humans cosmovisor[3291491]: 12:06PM INF Unlocking keyring
+May 16 12:06:37 humans cosmovisor[3291491]: 12:06PM INF starting ABCI with Tendermint
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF starting node with ABCI Tendermint in-process
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=multiAppConn module=proxy msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start connection=query impl=localClient module=abci-client msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start connection=snapshot impl=localClient module=abci-client msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start connection=mempool impl=localClient module=abci-client msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start connection=consensus impl=localClient module=abci-client msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=EventBus module=events msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=PubSub module=pubsub msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=IndexerService module=txindex msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF ABCI Handshake App Info hash="A\x06\x0e�~�NY'�\x1e�܂Z^�F9\x01��\x04D����{���" height=71079 module=consensus protocol-version=0 server=node software-version=0.2.1
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF ABCI Replay Blocks appHeight=71079 module=consensus server=node stateHeight=71079 storeHeight=71079
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF Completed ABCI Handshake - CometBFT and App are synced appHash="A\x06\x0e�~�NY'�\x1e�܂Z^�F9\x01��\x04D����{���" appHeight=71079 module=consensus server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF Version info abci=0.17.0 block=11 cmtbft_version=0.34.27 commit_hash= p2p=8 server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF This node is a validator addr=52B24DF11FB5B32DF2DF93A27AA9FF82A1862919 module=consensus pubKey=TiOznLqivbrwN5GjiXwKMn6P3FhJS28w+I5b9c/A9ps= server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF P2P Node ID ID=62fff57f15d7ba6fb8aecb9ae93ea58dd3cefea8 file=/home/user/.humansd/config/node_key.json module=p2p server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF Adding persistent peers addrs=[] module=p2p server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF Adding unconditional peer ids ids=[] module=p2p server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF Add our address to book addr={"id":"62fff57f15d7ba6fb8aecb9ae93ea58dd3cefea8","ip":"0.0.0.0","port":26656} book=/home/user/.humansd/config/addrbook.json module=p2p server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=Node msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF Starting pprof server laddr=localhost:6060 server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl="P2P Switch" module=p2p msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=Evidence module=evidence msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=StateSync module=statesync msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF serve module=rpc-server msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=PEX module=pex msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start book=/home/user/.humansd/config/addrbook.json impl=AddrBook module=p2p msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=BlockchainReactor module=blockchain msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=BlockPool module=blockchain msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl=ConsensusReactor module=consensus msg={} server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF Reactor  module=consensus server=node waitSync=true
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF Saving AddrBook to file book=/home/user/.humansd/config/addrbook.json module=p2p server=node size=120
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF Ensure peers module=pex numDialing=0 numInPeers=0 numOutPeers=0 numToDial=10 server=node
+May 16 12:06:39 humans cosmovisor[3291491]: 12:06PM INF service start impl="Peer{MConn{3.22.177.64:26656} b9c1f8437819fa735c805dcbff8e149a2222d76c out}" module=p2p msg={} peer={"id":"b9c1f8437819fa735c805dcbff8e149a2222d76c","ip":"3.22.177.64","port":26656} server=node

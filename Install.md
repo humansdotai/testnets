@@ -113,6 +113,28 @@ you want your node to shutdown or by passing the `--halt-height` flag to `humans
 The node will shutdown with a zero exit code at that given height after committing
 the block.
 
+## Delegate & undelegate tokens
+
+You can delegate your tokens to a validator with the following command:
+
+```bash
+humansd tx staking delegate <validator valoper> <amount> --from <wallet> --chain-id <chain-id>
+```
+
+You can undelegate tokens to a validator with the unbond command:
+
+```bash
+humansd tx staking unbond <validator valoper> <amount> --from <wallet> --chain-id <chain-id>
+```
+
+## Unjailing the validator
+
+You can unjail your validator with the following command:
+
+```bash
+humansd tx slashing unjail --from <validator wallet> --chain-id <chain-id> --gas auto -y
+```
+
 ## Common Problems
 
 ### Problem #1: My validator has `voting_power: 0`

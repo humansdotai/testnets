@@ -1,5 +1,4 @@
-# Mission 2 
-
+# Mission 3
 # Submitting your gentx for the Humans Incentivized Testnet
 
 ## Prerequisites
@@ -8,7 +7,7 @@
 * [Installation Instructions](../../Install.md)
 * [Node repository](https://github.com/humansdotai/humans/)
 
-⚠️ Check the `genesis.json` hash before continuing `be45acc413ef1ff73a19c796e74b84acdeb65b14d672684dc2374889c898cd3d  genesis.json`
+⚠️ Check the `genesis.json` hash before continuing `7a94e0d8119dd1995eecc88c544b03365889b9f4b059402ccffc9b44c1d9b958  genesis.json`
 
 Thank you for becoming a genesis validator on Humans! This guide will provide instructions on setting up a node, submitting a gentx, and other tasks needed to participate in the launch of the Humans Friction incentivized testnet.
 
@@ -23,7 +22,7 @@ A `gentx` does three things:
 Software:
 
 * Go version: [v1.20.1+](https://golang.org/dl/)
-* Humans version: [v0.2.1](https://github.com/humansdotai/humans/releases)
+* Humans version: [v0.2.2](https://github.com/humansdotai/humans/releases)
 
 To verify that Go is installed:
 
@@ -40,30 +39,30 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 
    ```bash
    git clone https://github.com/humansdotai/humans
-   cd humans && git checkout tags/v0.2.1
+   cd humans && git checkout tags/v0.2.2
    make install
    ```
 
    If the `humansd` command is not available you can copy `cp ./build/humansd /usr/local/sbin/` you might need `sudo`
 
-   Make sure to checkout to `v0.2.1` tag.
+   Make sure to checkout to `v0.2.2` tag.
 
    Verify that everything is OK. If you get something *like* the following, you've successfully installed Humans on your system.
 
    ```sh
-   build_tags: netgo ledger,
-   commit: d773227063e5d6187bfc312b2cf42fc18f4533e0
+   build_tags: ""
+   commit: a3e608e8fc45ace7055fc312b7e5f4831ca79816
    cosmos_sdk_version: v0.46.11
-   go: go version go1.20.3 linux/amd64
+   go: go version go1.19.5 darwin/arm64
    name: humans
    server_name: humansd
-   version: 0.2.1
+   version: 0.2.2
    ```
 
 2. Initialize the `humansd` directories and create the local file with the correct chain-id
 
    ```bash
-   humansd init <moniker> --chain-id=humans_3000-23
+   humansd init <moniker> --chain-id=humans_3000-31
    ```
 
 3. Create a local key pair in the keybase
@@ -77,7 +76,7 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 4. Add the account to your local genesis file with a given amount and key you just created.
 
    ```bash
-   humansd add-genesis-account $(humansd keys show <your key name> -a) 801000000000000000000aheart
+   humansd add-genesis-account $(humansd keys show <your key name> -a) 1040000000000000000aheart
    ```
 
    Make sure to use `aheart` denom, not anything else like `uatom`.
@@ -86,17 +85,17 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
 
    ⚠️ Please set the `commission-rate` ≥ `0.05` as the genesis parameter for staking `min_commission_rate` is set to `0.05` and the genesis block will not be generated.
 
-     ⚠️ Please set the `gas-prices` ≥ `4000000000000000aheart` as the global parameter for  `gas-prices` is set to be bigger than `4000000000000000aheart` and the gentx creation will fail thus block will not co generated.
+   ⚠️ Please set the `gas-prices` ≥ `20000000000aheart` as the global parameter for  `gas fee` is set to be bigger than `4000000000000000aheart` and the gentx creation will fail thus block will not be generated.
 
    ```bash
    humansd gentx <your key name> 1000000000000000000aheart \
-     --chain-id=humans_3000-23 \
+     --chain-id=humans_3000-31 \
      --moniker=<moniker> \
      --details="My moniker description" \
      --commission-rate=0.05 \
      --commission-max-rate=0.2 \
      --commission-max-change-rate=0.01 \
-     --gas-prices 4000000000000000aheart \
+     --gas-prices 20000000000aheart \
      --pubkey $(humansd tendermint show-validator) \
      --identity="<Keybase.io GPG Public Key>"
    ```
@@ -114,7 +113,7 @@ These instructions are written targeting an Ubuntu 20.04 system.  Relevant chang
     humansd validate-genesis
     ```
 
-8 . Create Pull Request to the repository ([humansdotai/testnets](https://github.com/humansdotai/testnets)) with the file  `friction/mission-2/gentxs/<your validator moniker>.json`. In order to be a valid submission, you need the `.json` file extension and no whitespace or special characters in your filename.
+8 . Create Pull Request to the repository ([humansdotai/testnets](https://github.com/humansdotai/testnets)) with the file  `friction/mission-3/gentxs/<your validator moniker>.json`. In order to be a valid submission, you need the `.json` file extension and no whitespace or special characters in your filename.
 
 Your PR should be one addition. Only PR requests from approved active participants will be included in the genesis file.
 

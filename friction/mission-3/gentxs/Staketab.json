@@ -52,7 +52,7 @@
             "amount": [
                 {
                     "denom": "aheart",
-                    "amount": "800000000000000000000"
+                    "amount": "4000000000000000"
                 }
             ],
             "gas_limit": "200000",
@@ -62,6 +62,6 @@
         "tip": null
     },
     "signatures": [
-        "GWTg5txKR/Z6MQk3vXH54GU7q/P/KjL9ZJpLdfSpdL4RuCKl+mlbpHBtkIOLOMq3ftnIWwYiEyHYF8i9qFm9+AE="
+        "GcnwDHgyQ7Mea4dut2qZHHmNvoXd1v6OkhTGvuhGVAAVduAiLaL3L6+v1p0+dF0I0+mJngbRPE8C2xOwuBIIyAE="
     ]
 }

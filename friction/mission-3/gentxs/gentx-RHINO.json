@@ -42,7 +42,7 @@
       }
     ],
     "fee": {
-      "amount": [{ "denom": "aheart", "amount": "800000000000000000000" }],
+      "amount": [{ "denom": "aheart", "amount": "4000000000000000" }],
       "gas_limit": "200000",
       "payer": "",
       "granter": ""
@@ -50,6 +50,6 @@
     "tip": null
   },
   "signatures": [
-    "o5pU25r5OhzqGXfv/Oa2NQd77WH7FxKutBdpCnMrwVFs34OTLKSV6KlVo8DOKtCU0XqiprymlP3X1PPUXQlJXwA="
+    "tXER8E45I/yNIfoq7nM9/4/JmhgAHF+M4zMrEPZcuQJL7Uq6VlJfZrDTK9ORZ4/Adkv9ulj6DsdmwtQ/+iAlqgE="
   ]
 }
